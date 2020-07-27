@@ -17,7 +17,7 @@ interface CategoriaDespesa {
   end: number;
 }
 
-export function CategoriaDespesa() {
+export function CategoriaDespesaSenado() {
   useEffect(() => {
     const margin = {
       top: 10,
@@ -55,16 +55,12 @@ export function CategoriaDespesa() {
       }
     }
 
-    console.log(groupData);
-
     const dataByYear: Array<GroupCategoriaDespesa> = Object.values(groupData);
-
-    console.log(dataByYear);
 
     const height = 400;
 
     const svg = d3
-      .select('#categoria-despesa')
+      .select('#categoria-despesa-senado')
       .append('svg')
       .attr('width', '100%')
       .attr('height', height);
@@ -218,5 +214,5 @@ export function CategoriaDespesa() {
       .attr('transform', `translate(${margin.left}, 0)`);
   }, []);
 
-  return <div id="categoria-despesa"></div>;
+  return <div id="categoria-despesa-senado"></div>;
 }

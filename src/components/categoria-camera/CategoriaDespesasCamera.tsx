@@ -2,14 +2,22 @@ import React, { useEffect } from 'react';
 import * as d3 from 'd3';
 
 import data from './data.json';
-import dataSenado from './data-senado.json';
 
-interface CotaParlamentarData {
+interface GroupCategoriaDespesa {
   year: number;
-  value: number;
+  data: CategoriaDespesa[];
+  total: number;
 }
 
-export function CotaParlamentar() {
+interface CategoriaDespesa {
+  year: number;
+  description: string;
+  value: number;
+  start: number;
+  end: number;
+}
+
+export function CategoriaDespesaCamera() {
   useEffect(() => {
     const margin = {
       top: 10,
@@ -18,26 +26,59 @@ export function CotaParlamentar() {
       right: 10,
     };
 
+    const keys: string[] = [];
+    const groupData: {
+      [year: number]: GroupCategoriaDespesa;
+    } = {};
+
+    data.sort((a, b) => a.value - b.value);
+
+    for (const d of data) {
+      if (!groupData[d.year]) {
+        groupData[d.year] = {
+          year: d.year,
+          data: [],
+          total: 0,
+        };
+      }
+
+      groupData[d.year].data.splice(0, 0, {
+        ...d,
+        start: groupData[d.year].total,
+        end: groupData[d.year].total + d.value,
+      });
+
+      groupData[d.year].total += d.value;
+
+      if (!keys.includes(d.description)) {
+        keys.push(d.description);
+      }
+    }
+
+    const dataByYear: Array<GroupCategoriaDespesa> = Object.values(groupData);
+
     const height = 400;
 
     const svg = d3
-      .select('#cota-parlamentar')
+      .select('#categoria-despesa')
       .append('svg')
       .attr('width', '100%')
       .attr('height', height);
 
     const width = svg.node()?.getBoundingClientRect().width as number;
 
-    const xAccessor = (d: CotaParlamentarData) => d.year.toString();
-    const yAccessor = (d: CotaParlamentarData) => d.value;
+    const xGroupAccessor = (d: GroupCategoriaDespesa) => d.year.toString();
+    const yGroupAccessor = (d: GroupCategoriaDespesa) => d.total;
 
-    const keys = data.map(xAccessor);
+    const xAccessor = (d: CategoriaDespesa) => d.year.toString();
+    const yAccessor = (d: CategoriaDespesa) => d.end;
+    const y2Accessor = (d: CategoriaDespesa) => d.start;
 
-    const yMax = d3.max(data, yAccessor) as number;
+    const yMax = d3.max(dataByYear, yGroupAccessor) as number;
 
     const xScale = d3
       .scaleBand()
-      .domain(data.map(xAccessor))
+      .domain(dataByYear.map(xGroupAccessor))
       .range([margin.left, width - margin.right])
       .paddingInner(0.1)
       .paddingOuter(0.1);
@@ -47,14 +88,12 @@ export function CotaParlamentar() {
       .domain([0, yMax])
       .range([height - margin.bottom, margin.top]);
 
-    const colorScale = d3
-      .scaleOrdinal(d3.schemeCategory10)
-      .domain(['camara', 'senado']);
+    const colorScale = d3.scaleOrdinal(d3.schemeSet3).domain(keys);
 
     const xAxis = d3.axisBottom(xScale);
     const yAxis = d3.axisLeft(yScale);
 
-    const groups = svg.selectAll('g').data(keys).enter().append('g');
+    const groups = svg.selectAll('g').data(dataByYear).enter().append('g');
 
     const locale = d3.formatLocale({
       decimal: ',',
@@ -67,7 +106,8 @@ export function CotaParlamentar() {
 
     groups
       .on('mouseenter', function (d) {
-        const x = (xScale(d) as number) + xScale.bandwidth() / 2;
+        const x =
+          (xScale(xGroupAccessor(d)) as number) + xScale.bandwidth() / 2;
 
         const groupTooltip = svg
           .append('g')
@@ -88,13 +128,13 @@ export function CotaParlamentar() {
           .append('g')
           .attr(
             'transform',
-            `translate(${x + (+d >= 2019 ? -215 : 5)}, ${yScale(yMax)})`
+            `translate(${x + (d.year >= 2018 ? -345 : 5)}, ${yScale(yMax)})`
           );
 
         tooltipContainer
           .append('rect')
-          .attr('width', 210)
-          .attr('height', 70)
+          .attr('width', 340)
+          .attr('height', 270)
           .attr('rx', 5)
           .attr('ry', 5)
           .attr('fill', '#fff')
@@ -112,27 +152,13 @@ export function CotaParlamentar() {
         tooltipHeader
           .append('text')
           .attr('font-size', 12)
-          .attr('transform', 'translate(200, 15)')
+          .attr('transform', 'translate(330, 15)')
           .attr('text-anchor', 'end')
           .text('Valor');
 
-        const dataTooltip = [
-          {
-            key: 'camara',
-            description: 'câmara',
-            value: data.find((dt) => dt.year.toString() === d)?.value as number,
-          },
-          {
-            key: 'senado',
-            description: 'senado',
-            value: dataSenado.find((dt) => dt.year.toString() === d)
-              ?.value as number,
-          },
-        ];
-
         const tooltipBody = tooltipContainer
           .selectAll('g.data-row')
-          .data(dataTooltip)
+          .data(d.data)
           .enter()
           .append('g')
           .attr('class', 'data-row')
@@ -144,7 +170,7 @@ export function CotaParlamentar() {
           .attr('height', 10)
           .attr('rx', 2)
           .attr('ry', 2)
-          .attr('fill', (d) => colorScale(d.key))
+          .attr('fill', (d) => colorScale(d.description))
           .attr('transform', (d, i) => `translate(0, ${32 + i * 20})`)
           .text((d) => d.description);
 
@@ -157,7 +183,7 @@ export function CotaParlamentar() {
         tooltipBody
           .append('text')
           .attr('font-size', 12)
-          .attr('transform', (d, i) => `translate(200, ${40 + i * 20})`)
+          .attr('transform', (d, i) => `translate(330, ${40 + i * 20})`)
           .attr('text-anchor', 'end')
           .text((d) => formatter(d.value));
       })
@@ -166,31 +192,16 @@ export function CotaParlamentar() {
       });
 
     groups
-      .selectAll('rect.camara')
-      .data((d) => data.filter((dt) => dt.year.toString() === d))
+      .selectAll('rect')
+      .data((d) => d.data)
       .enter()
       .append('rect')
-      .attr('class', 'camara')
       .attr('x', (d) => xScale(xAccessor(d)) as number)
       .attr('y', (d) => yScale(yAccessor(d)))
-      .attr('width', xScale.bandwidth() / 2)
-      .attr('height', (d) => yScale(height) - yScale(yAccessor(d)))
-      .attr('fill', colorScale('camara'));
-
-    groups
-      .selectAll('rect.senado')
-      .data((d) => dataSenado.filter((dt) => dt.year.toString() === d))
-      .enter()
-      .append('rect')
-      .attr('class', 'senado')
-      .attr(
-        'x',
-        (d) => (xScale(xAccessor(d)) as number) + xScale.bandwidth() / 2
-      )
-      .attr('y', (d) => yScale(yAccessor(d)))
-      .attr('width', xScale.bandwidth() / 2)
-      .attr('height', (d) => yScale(height) - yScale(yAccessor(d)))
-      .attr('fill', colorScale('senado'));
+      .attr('width', xScale.bandwidth())
+      .attr('height', (d) => yScale(y2Accessor(d)) - yScale(yAccessor(d)))
+      .attr('fill', (d) => colorScale(d.description))
+      .attr('data-text', (d) => d.description);
 
     svg
       .append('g')
@@ -203,5 +214,5 @@ export function CotaParlamentar() {
       .attr('transform', `translate(${margin.left}, 0)`);
   }, []);
 
-  return <div id="cota-parlamentar"></div>;
+  return <div id="categoria-despesa"></div>;
 }

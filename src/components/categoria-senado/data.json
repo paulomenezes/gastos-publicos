@@ -1,0 +1,322 @@
+[
+  {
+    "year": 2009,
+    "description": "aluguel e despesa de imóveis",
+    "value": 2673682.05
+  },
+  {
+    "year": 2009,
+    "description": "apoio ao exercício do mandato",
+    "value": 1705488.25
+  },
+  {
+    "year": 2009,
+    "description": "divulgação da atividade parlamentar",
+    "value": 1997519.88
+  },
+  {
+    "year": 2009,
+    "description": "locomoção, hospedagem, alimentação",
+    "value": 4724795.17
+  },
+  {
+    "year": 2009,
+    "description": "manutenção de escritórios",
+    "value": 625400.91
+  },
+  {
+    "year": 2010,
+    "description": "aluguel e despesa de imóveis",
+    "value": 2750319.93
+  },
+  {
+    "year": 2010,
+    "description": "apoio ao exercício do mandato",
+    "value": 2032545.53
+  },
+  {
+    "year": 2010,
+    "description": "divulgação da atividade parlamentar",
+    "value": 967499.51
+  },
+  {
+    "year": 2010,
+    "description": "locomoção, hospedagem, alimentação",
+    "value": 4408138.3
+  },
+  {
+    "year": 2010,
+    "description": "manutenção de escritórios",
+    "value": 601448.22
+  },
+  {
+    "year": 2011,
+    "description": "aluguel e despesa de imóveis",
+    "value": 3379686.64
+  },
+  {
+    "year": 2011,
+    "description": "apoio ao exercício do mandato",
+    "value": 2593017.74
+  },
+  {
+    "year": 2011,
+    "description": "divulgação da atividade parlamentar",
+    "value": 2811821.72
+  },
+  {
+    "year": 2011,
+    "description": "locomoção, hospedagem, alimentação",
+    "value": 5768470.47
+  },
+  {
+    "year": 2011,
+    "description": "manutenção de escritórios",
+    "value": 749593.89
+  },
+  { "year": 2011, "description": "passagens aéreas", "value": 3482161.92 },
+  { "year": 2011, "description": "segurança", "value": 219702.45 },
+  {
+    "year": 2012,
+    "description": "aluguel e despesa de imóveis",
+    "value": 4051577.38
+  },
+  {
+    "year": 2012,
+    "description": "apoio ao exercício do mandato",
+    "value": 2517317.67
+  },
+  {
+    "year": 2012,
+    "description": "divulgação da atividade parlamentar",
+    "value": 3189724.59
+  },
+  {
+    "year": 2012,
+    "description": "locomoção, hospedagem, alimentação",
+    "value": 6123928.37
+  },
+  {
+    "year": 2012,
+    "description": "manutenção de escritórios",
+    "value": 921416.07
+  },
+  { "year": 2012, "description": "passagens aéreas", "value": 6273116.71 },
+  { "year": 2012, "description": "segurança", "value": 272661.58 },
+  {
+    "year": 2013,
+    "description": "aluguel e despesa de imóveis",
+    "value": 4430053.17
+  },
+  {
+    "year": 2013,
+    "description": "apoio ao exercício do mandato",
+    "value": 2505168.71
+  },
+  {
+    "year": 2013,
+    "description": "divulgação da atividade parlamentar",
+    "value": 3398890.9
+  },
+  {
+    "year": 2013,
+    "description": "locomoção, hospedagem, alimentação",
+    "value": 5712907.6
+  },
+  {
+    "year": 2013,
+    "description": "manutenção de escritórios",
+    "value": 904412.68
+  },
+  { "year": 2013, "description": "passagens aéreas", "value": 7309760.82 },
+  { "year": 2013, "description": "segurança", "value": 395868.64 },
+  {
+    "year": 2014,
+    "description": "aluguel e despesa de imóveis",
+    "value": 4532656.88
+  },
+  {
+    "year": 2014,
+    "description": "apoio ao exercício do mandato",
+    "value": 2755498.75
+  },
+  {
+    "year": 2014,
+    "description": "divulgação da atividade parlamentar",
+    "value": 2907771.79
+  },
+  {
+    "year": 2014,
+    "description": "locomoção, hospedagem, alimentação",
+    "value": 4983816.95
+  },
+  {
+    "year": 2014,
+    "description": "manutenção de escritórios",
+    "value": 795070.85
+  },
+  { "year": 2014, "description": "passagens aéreas", "value": 6070659.01 },
+  { "year": 2014, "description": "segurança", "value": 473867.51 },
+  {
+    "year": 2015,
+    "description": "aluguel e despesa de imóveis",
+    "value": 4717752.29
+  },
+  {
+    "year": 2015,
+    "description": "apoio ao exercício do mandato",
+    "value": 3195508.35
+  },
+  {
+    "year": 2015,
+    "description": "divulgação da atividade parlamentar",
+    "value": 3276294.25
+  },
+  {
+    "year": 2015,
+    "description": "locomoção, hospedagem, alimentação",
+    "value": 5604242.89
+  },
+  {
+    "year": 2015,
+    "description": "manutenção de escritórios",
+    "value": 808419.05
+  },
+  { "year": 2015, "description": "passagens aéreas", "value": 10836816.06 },
+  { "year": 2015, "description": "segurança", "value": 451465.38 },
+  {
+    "year": 2016,
+    "description": "aluguel e despesa de imóveis",
+    "value": 4989746.85
+  },
+  {
+    "year": 2016,
+    "description": "apoio ao exercício do mandato",
+    "value": 3109181.76
+  },
+  {
+    "year": 2016,
+    "description": "divulgação da atividade parlamentar",
+    "value": 3585465.79
+  },
+  {
+    "year": 2016,
+    "description": "locomoção, hospedagem, alimentação",
+    "value": 5916160.99
+  },
+  {
+    "year": 2016,
+    "description": "manutenção de escritórios",
+    "value": 1053998.25
+  },
+  { "year": 2016, "description": "passagens aéreas", "value": 6152462.7 },
+  { "year": 2016, "description": "segurança", "value": 494869.88 },
+  {
+    "year": 2017,
+    "description": "aluguel e despesa de imóveis",
+    "value": 5108216.32
+  },
+  {
+    "year": 2017,
+    "description": "apoio ao exercício do mandato",
+    "value": 3927610.09
+  },
+  {
+    "year": 2017,
+    "description": "divulgação da atividade parlamentar",
+    "value": 3793262.05
+  },
+  {
+    "year": 2017,
+    "description": "locomoção, hospedagem, alimentação",
+    "value": 5781783.44
+  },
+  {
+    "year": 2017,
+    "description": "manutenção de escritórios",
+    "value": 862881.86
+  },
+  { "year": 2017, "description": "passagens aéreas", "value": 6725228.27 },
+  { "year": 2017, "description": "segurança", "value": 473761.23 },
+  {
+    "year": 2018,
+    "description": "aluguel e despesa de imóveis",
+    "value": 5035438.25
+  },
+  {
+    "year": 2018,
+    "description": "apoio ao exercício do mandato",
+    "value": 4966449.41
+  },
+  {
+    "year": 2018,
+    "description": "divulgação da atividade parlamentar",
+    "value": 2568910.24
+  },
+  {
+    "year": 2018,
+    "description": "locomoção, hospedagem, alimentação",
+    "value": 5620092.84
+  },
+  {
+    "year": 2018,
+    "description": "manutenção de escritórios",
+    "value": 900312.04
+  },
+  { "year": 2018, "description": "passagens aéreas", "value": 6335284.94 },
+  { "year": 2018, "description": "segurança", "value": 172213.61 },
+  {
+    "year": 2019,
+    "description": "aluguel e despesa de imóveis",
+    "value": 4188533.45
+  },
+  {
+    "year": 2019,
+    "description": "apoio ao exercício do mandato",
+    "value": 5931522.01
+  },
+  {
+    "year": 2019,
+    "description": "divulgação da atividade parlamentar",
+    "value": 2344364.06
+  },
+  {
+    "year": 2019,
+    "description": "locomoção, hospedagem, alimentação",
+    "value": 4451860.48
+  },
+  {
+    "year": 2019,
+    "description": "manutenção de escritórios",
+    "value": 871498.33
+  },
+  { "year": 2019, "description": "passagens aéreas", "value": 7431967.46 },
+  { "year": 2019, "description": "segurança", "value": 41870.59 },
+  {
+    "year": 2020,
+    "description": "aluguel e despesa de imóveis",
+    "value": 1933417.67
+  },
+  {
+    "year": 2020,
+    "description": "apoio ao exercício do mandato",
+    "value": 2632708.85
+  },
+  {
+    "year": 2020,
+    "description": "divulgação da atividade parlamentar",
+    "value": 962254.15
+  },
+  {
+    "year": 2020,
+    "description": "locomoção, hospedagem, alimentação",
+    "value": 3781026.65
+  },
+  {
+    "year": 2020,
+    "description": "manutenção de escritórios",
+    "value": 450980.62
+  },
+  { "year": 2020, "description": "passagens aéreas", "value": 1265683.37 },
+  { "year": 2020, "description": "segurança", "value": 11510.18 }
+]

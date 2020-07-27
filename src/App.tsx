@@ -1,6 +1,7 @@
 import React from 'react';
 import { CotaParlamentar } from './components/cota/CotaParlamentar';
-import { CategoriaDespesa } from './components/categoria/CategoriaDespesas';
+import { CategoriaDespesaCamera } from './components/categoria-camera/CategoriaDespesasCamera';
+import { CategoriaDespesaSenado } from './components/categoria-senado/CategoriaDespesasSenado';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
 
       <div className="mt-2">
         <p className="mb-4">
-          Gastos com a cota parlamentar de 2009 até 2020.
+          Gastos com a cota dos deputados e dos senadores de 2009 até 2020.
           <span className="text-xs">
             (Os gastos de 2020 são referentes até o mês de Junho)
           </span>
@@ -19,9 +20,17 @@ function App() {
 
         <CotaParlamentar />
 
-        <p>Essas despesas são distribuídas nas seguintes categorias:</p>
+        <p>
+          As despesas dos deputados são distribuídas nas seguintes categorias:
+        </p>
 
-        <CategoriaDespesa />
+        <CategoriaDespesaCamera />
+
+        <p>
+          Enquanto as dos senadores são distribuídas nessas outras categorias:
+        </p>
+
+        <CategoriaDespesaSenado />
       </div>
     </div>
   );
