@@ -134,7 +134,7 @@ export function CategoriaDespesaSenado() {
         tooltipContainer
           .append('rect')
           .attr('width', 340)
-          .attr('height', 270)
+          .attr('height', 170)
           .attr('rx', 5)
           .attr('ry', 5)
           .attr('fill', '#fff')
