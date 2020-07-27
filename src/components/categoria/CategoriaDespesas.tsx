@@ -31,6 +31,8 @@ export function CategoriaDespesa() {
       [year: number]: GroupCategoriaDespesa;
     } = {};
 
+    data.sort((a, b) => a.value - b.value);
+
     for (const d of data) {
       if (!groupData[d.year]) {
         groupData[d.year] = {
@@ -40,7 +42,7 @@ export function CategoriaDespesa() {
         };
       }
 
-      groupData[d.year].data.push({
+      groupData[d.year].data.splice(0, 0, {
         ...d,
         start: groupData[d.year].total,
         end: groupData[d.year].total + d.value,
@@ -95,11 +97,105 @@ export function CategoriaDespesa() {
     const xAxis = d3.axisBottom(xScale);
     const yAxis = d3.axisLeft(yScale);
 
-    svg
-      .selectAll('g')
-      .data(dataByYear)
-      .enter()
-      .append('g')
+    const groups = svg.selectAll('g').data(dataByYear).enter().append('g');
+
+    const locale = d3.formatLocale({
+      decimal: ',',
+      thousands: '.',
+      grouping: [3],
+      currency: ['R$ ', ''],
+    });
+
+    const formatter = locale.format('$,.2f');
+
+    groups
+      .on('mouseenter', function (d) {
+        const x =
+          (xScale(xGroupAccessor(d)) as number) + xScale.bandwidth() / 2;
+
+        const groupTooltip = svg
+          .append('g')
+          .attr('class', 'group-tooltip')
+          .attr('pointer-events', 'none');
+
+        groupTooltip
+          .append('line')
+          .attr('x1', x)
+          .attr('y1', yScale(yMax))
+          .attr('x2', x)
+          .attr('y2', yScale(0))
+          .attr('stroke', 'black')
+          .attr('stroke-width', 1)
+          .attr('opacity', 0.5);
+
+        const tooltipContainer = groupTooltip
+          .append('g')
+          .attr(
+            'transform',
+            `translate(${x + (d.year >= 2018 ? -345 : 5)}, ${yScale(yMax)})`
+          );
+
+        tooltipContainer
+          .append('rect')
+          .attr('width', 340)
+          .attr('height', 270)
+          .attr('rx', 5)
+          .attr('ry', 5)
+          .attr('fill', '#fff')
+          .attr('stroke', '#CCC');
+
+        const tooltipHeader = tooltipContainer
+          .append('g')
+          .attr('transform', `translate(5, 0)`);
+
+        tooltipHeader
+          .append('text')
+          .attr('font-size', 12)
+          .attr('transform', 'translate(0, 15)')
+          .text('Categoria');
+        tooltipHeader
+          .append('text')
+          .attr('font-size', 12)
+          .attr('transform', 'translate(330, 15)')
+          .attr('text-anchor', 'end')
+          .text('Valor');
+
+        const tooltipBody = tooltipContainer
+          .selectAll('g.data-row')
+          .data(d.data)
+          .enter()
+          .append('g')
+          .attr('class', 'data-row')
+          .attr('transform', `translate(5, 0)`);
+
+        tooltipBody
+          .append('rect')
+          .attr('width', 10)
+          .attr('height', 10)
+          .attr('rx', 2)
+          .attr('ry', 2)
+          .attr('fill', (d) => colorScale(d.description))
+          .attr('transform', (d, i) => `translate(0, ${32 + i * 20})`)
+          .text((d) => d.description);
+
+        tooltipBody
+          .append('text')
+          .attr('font-size', 12)
+          .attr('transform', (d, i) => `translate(15, ${40 + i * 20})`)
+          .text((d) => d.description);
+
+        tooltipBody
+          .append('text')
+          .attr('font-size', 12)
+          .attr('transform', (d, i) => `translate(330, ${40 + i * 20})`)
+          .attr('text-anchor', 'end')
+          .text((d) => formatter(d.value));
+      })
+      .on('mouseleave', function () {
+        d3.selectAll('.group-tooltip').remove();
+      });
+
+    groups
       .selectAll('rect')
       .data((d) => d.data)
       .enter()

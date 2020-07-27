@@ -1,855 +1,722 @@
 [
   {
     "year": 2009,
-    "description": "AQUISIÇÃO DE MATERIAL DE ESCRITÓRIO.",
-    "value": 565211.23
-  },
-  {
-    "year": 2009,
-    "description": "AQUISIÇÃO OU LOC. DE SOFTWARE; SERV. POSTAIS; ASS.",
-    "value": 987255.06
-  },
-  {
-    "year": 2009,
-    "description": "ASSINATURA DE PUBLICAÇÕES",
-    "value": 91292.05
-  },
-  {
-    "year": 2009,
-    "description": "COMBUSTÍVEIS E LUBRIFICANTES.",
-    "value": 14278739.14
-  },
-  {
-    "year": 2009,
-    "description": "CONSULTORIAS, PESQUISAS E TRABALHOS TÉCNICOS.",
-    "value": 10853938.86
-  },
-  {
-    "year": 2009,
-    "description": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
-    "value": 23060119.78
-  },
-  {
-    "year": 2009,
-    "description": "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR",
+    "description": "alimentação",
     "value": 843940.18
   },
   {
     "year": 2009,
-    "description": "HOSPEDAGEM ,EXCETO DO PARLAMENTAR NO DISTRITO FEDERAL.",
+    "description": "combustíveis e lubrificantes",
+    "value": 14278739.14
+  },
+  {
+    "year": 2009,
+    "description": "consultorias e trabalhos técnicos",
+    "value": 10853938.86
+  },
+  {
+    "year": 2009,
+    "description": "divulgação da atividade parlamentar",
+    "value": 23060119.78
+  },
+  {
+    "year": 2009,
+    "description": "hospedagem",
     "value": 969531.79
   },
   {
     "year": 2009,
-    "description": "LOCAÇÃO DE VEÍCULOS AUTOMOTORES OU FRETAMENTO DE EMBARCAÇÕES",
-    "value": 8823075.6
+    "description": "locomoção",
+    "value": 14379916.82
   },
   {
     "year": 2009,
-    "description": "LOCOMOÇÃO, ALIMENTAÇÃO E  HOSPEDAGEM",
-    "value": 5556841.22
+    "description": "manutenção de escritórios",
+    "value": 13413541.08
   },
   {
     "year": 2009,
-    "description": "MANUTENÇÃO DE ESCRITÓRIO DE APOIO À ATIVIDADE PARLAMENTAR",
-    "value": 11861074.79
+    "description": "cursos, congressos ou eventos",
+    "value": 91292.05
   },
   {
     "year": 2009,
-    "description": "PASSAGEM AÉREA - REEMBOLSO",
-    "value": 5203713.6
+    "description": "passagens aéreas",
+    "value": 16397457.32
   },
-  { "year": 2009, "description": "PASSAGEM AÉREA - RPA", "value": 11193743.72 },
   {
     "year": 2009,
-    "description": "SERVIÇO DE SEGURANÇA PRESTADO POR EMPRESA ESPECIALIZADA.",
+    "description": "segurança",
     "value": 744149.75
   },
-  { "year": 2009, "description": "SERVIÇOS POSTAIS", "value": 5223482.27 },
-  { "year": 2009, "description": "TELEFONIA", "value": 15881115.98 },
   {
-    "year": 2010,
-    "description": "ASSINATURA DE PUBLICAÇÕES",
-    "value": 226547.35
+    "year": 2009,
+    "description": "serviços postais",
+    "value": 5223482.27
+  },
+  {
+    "year": 2009,
+    "description": "telefonia",
+    "value": 15881115.98
   },
   {
     "year": 2010,
-    "description": "COMBUSTÍVEIS E LUBRIFICANTES.",
-    "value": 17101888.48
-  },
-  {
-    "year": 2010,
-    "description": "CONSULTORIAS, PESQUISAS E TRABALHOS TÉCNICOS.",
-    "value": 15834747.28
-  },
-  {
-    "year": 2010,
-    "description": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
-    "value": 21461554.86
-  },
-  {
-    "year": 2010,
-    "description": "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR",
+    "description": "alimentação",
     "value": 1494590.63
   },
   {
     "year": 2010,
-    "description": "HOSPEDAGEM ,EXCETO DO PARLAMENTAR NO DISTRITO FEDERAL.",
+    "description": "combustíveis e lubrificantes",
+    "value": 17101888.48
+  },
+  {
+    "year": 2010,
+    "description": "consultorias e trabalhos técnicos",
+    "value": 15834747.28
+  },
+  {
+    "year": 2010,
+    "description": "divulgação da atividade parlamentar",
+    "value": 21461554.86
+  },
+  {
+    "year": 2010,
+    "description": "hospedagem",
     "value": 1976949.45
   },
   {
     "year": 2010,
-    "description": "LOCAÇÃO DE VEÍCULOS AUTOMOTORES OU FRETAMENTO DE EMBARCAÇÕES",
+    "description": "locomoção",
     "value": 20860079.32
   },
   {
     "year": 2010,
-    "description": "MANUTENÇÃO DE ESCRITÓRIO DE APOIO À ATIVIDADE PARLAMENTAR",
+    "description": "manutenção de escritórios",
     "value": 15978539.98
   },
   {
     "year": 2010,
-    "description": "PASSAGEM AÉREA - REEMBOLSO",
-    "value": 9233263.58
+    "description": "cursos, congressos ou eventos",
+    "value": 226547.35
   },
-  { "year": 2010, "description": "PASSAGEM AÉREA - RPA", "value": 15063710.78 },
   {
     "year": 2010,
-    "description": "SERVIÇO DE SEGURANÇA PRESTADO POR EMPRESA ESPECIALIZADA.",
+    "description": "passagens aéreas",
+    "value": 24296974.36
+  },
+  {
+    "year": 2010,
+    "description": "segurança",
     "value": 1263315.16
   },
-  { "year": 2010, "description": "SERVIÇOS POSTAIS", "value": 7094850.16 },
-  { "year": 2010, "description": "TELEFONIA", "value": 29252422.26 },
   {
-    "year": 2011,
-    "description": "ASSINATURA DE PUBLICAÇÕES",
-    "value": 231710.59
+    "year": 2010,
+    "description": "serviços postais",
+    "value": 7094850.16
+  },
+  {
+    "year": 2010,
+    "description": "telefonia",
+    "value": 29252422.26
   },
   {
     "year": 2011,
-    "description": "COMBUSTÍVEIS E LUBRIFICANTES.",
-    "value": 17084371.53
-  },
-  {
-    "year": 2011,
-    "description": "CONSULTORIAS, PESQUISAS E TRABALHOS TÉCNICOS.",
-    "value": 15822233.46
-  },
-  {
-    "year": 2011,
-    "description": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
-    "value": 30266092.96
-  },
-  {
-    "year": 2011,
-    "description": "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR",
+    "description": "alimentação",
     "value": 1896775.72
   },
   {
     "year": 2011,
-    "description": "HOSPEDAGEM ,EXCETO DO PARLAMENTAR NO DISTRITO FEDERAL.",
+    "description": "combustíveis e lubrificantes",
+    "value": 17084371.53
+  },
+  {
+    "year": 2011,
+    "description": "consultorias e trabalhos técnicos",
+    "value": 15822233.46
+  },
+  {
+    "year": 2011,
+    "description": "divulgação da atividade parlamentar",
+    "value": 30266092.96
+  },
+  {
+    "year": 2011,
+    "description": "hospedagem",
     "value": 1894912.2
   },
   {
     "year": 2011,
-    "description": "LOCAÇÃO DE VEÍCULOS AUTOMOTORES OU FRETAMENTO DE EMBARCAÇÕES",
+    "description": "locomoção",
     "value": 22586004.36
   },
   {
     "year": 2011,
-    "description": "MANUTENÇÃO DE ESCRITÓRIO DE APOIO À ATIVIDADE PARLAMENTAR",
+    "description": "manutenção de escritórios",
     "value": 16614791.31
   },
   {
     "year": 2011,
-    "description": "PASSAGEM AÉREA - REEMBOLSO",
-    "value": 5954222.23
+    "description": "cursos, congressos ou eventos",
+    "value": 231710.59
   },
-  { "year": 2011, "description": "PASSAGEM AÉREA - RPA", "value": 33394441.25 },
   {
     "year": 2011,
-    "description": "SERVIÇO DE SEGURANÇA PRESTADO POR EMPRESA ESPECIALIZADA.",
+    "description": "passagens aéreas",
+    "value": 39348663.48
+  },
+  {
+    "year": 2011,
+    "description": "segurança",
     "value": 1465558.05
   },
-  { "year": 2011, "description": "SERVIÇOS POSTAIS", "value": 5602657.25 },
-  { "year": 2011, "description": "TELEFONIA", "value": 22373372.17 },
   {
-    "year": 2012,
-    "description": "ASSINATURA DE PUBLICAÇÕES",
-    "value": 286331.52
+    "year": 2011,
+    "description": "serviços postais",
+    "value": 5602657.25
+  },
+  {
+    "year": 2011,
+    "description": "telefonia",
+    "value": 22373372.17
   },
   {
     "year": 2012,
-    "description": "COMBUSTÍVEIS E LUBRIFICANTES.",
-    "value": 16571767.84
-  },
-  {
-    "year": 2012,
-    "description": "CONSULTORIAS, PESQUISAS E TRABALHOS TÉCNICOS.",
-    "value": 15427823.11
-  },
-  {
-    "year": 2012,
-    "description": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
-    "value": 30383885.7
-  },
-  {
-    "year": 2012,
-    "description": "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR",
+    "description": "alimentação",
     "value": 1614680.67
   },
   {
     "year": 2012,
-    "description": "HOSPEDAGEM ,EXCETO DO PARLAMENTAR NO DISTRITO FEDERAL.",
+    "description": "combustíveis e lubrificantes",
+    "value": 16571767.84
+  },
+  {
+    "year": 2012,
+    "description": "consultorias e trabalhos técnicos",
+    "value": 15427823.11
+  },
+  {
+    "year": 2012,
+    "description": "divulgação da atividade parlamentar",
+    "value": 30383885.7
+  },
+  {
+    "year": 2012,
+    "description": "hospedagem",
     "value": 1740759.97
   },
   {
     "year": 2012,
-    "description": "LOCAÇÃO DE VEÍCULOS AUTOMOTORES OU FRETAMENTO DE EMBARCAÇÕES",
+    "description": "locomoção",
     "value": 22669770.62
   },
   {
     "year": 2012,
-    "description": "MANUTENÇÃO DE ESCRITÓRIO DE APOIO À ATIVIDADE PARLAMENTAR",
+    "description": "manutenção de escritórios",
     "value": 18109595.74
   },
   {
     "year": 2012,
-    "description": "PASSAGEM AÉREA - REEMBOLSO",
-    "value": 5174005.1
+    "description": "cursos, congressos ou eventos",
+    "value": 286331.52
   },
-  { "year": 2012, "description": "PASSAGEM AÉREA - RPA", "value": 33388266.59 },
   {
     "year": 2012,
-    "description": "SERVIÇO DE SEGURANÇA PRESTADO POR EMPRESA ESPECIALIZADA.",
+    "description": "passagens aéreas",
+    "value": 38562271.69
+  },
+  {
+    "year": 2012,
+    "description": "segurança",
     "value": 1126987.05
   },
-  { "year": 2012, "description": "SERVIÇOS POSTAIS", "value": 4982219.27 },
-  { "year": 2012, "description": "TELEFONIA", "value": 21945265.61 },
   {
-    "year": 2013,
-    "description": "ASSINATURA DE PUBLICAÇÕES",
-    "value": 144797.91
+    "year": 2012,
+    "description": "serviços postais",
+    "value": 4982219.27
+  },
+  {
+    "year": 2012,
+    "description": "telefonia",
+    "value": 21945265.61
   },
   {
     "year": 2013,
-    "description": "COMBUSTÍVEIS E LUBRIFICANTES.",
-    "value": 16525269.06
-  },
-  {
-    "year": 2013,
-    "description": "CONSULTORIAS, PESQUISAS E TRABALHOS TÉCNICOS.",
-    "value": 14893008.62
-  },
-  {
-    "year": 2013,
-    "description": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
-    "value": 39526444.85
-  },
-  {
-    "year": 2013,
-    "description": "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR",
+    "description": "alimentação",
     "value": 1858701.33
   },
   {
     "year": 2013,
-    "description": "HOSPEDAGEM ,EXCETO DO PARLAMENTAR NO DISTRITO FEDERAL.",
+    "description": "combustíveis e lubrificantes",
+    "value": 16525269.06
+  },
+  {
+    "year": 2013,
+    "description": "consultorias e trabalhos técnicos",
+    "value": 14893008.62
+  },
+  {
+    "year": 2013,
+    "description": "divulgação da atividade parlamentar",
+    "value": 39526444.85
+  },
+  {
+    "year": 2013,
+    "description": "hospedagem",
     "value": 1903326.32
   },
   {
     "year": 2013,
-    "description": "LOCAÇÃO DE VEÍCULOS AUTOMOTORES OU FRETAMENTO DE EMBARCAÇÕES",
-    "value": 21173683.53
+    "description": "locomoção",
+    "value": 22803673.28
   },
   {
     "year": 2013,
-    "description": "LOCAÇÃO OU FRETAMENTO DE AERONAVES",
-    "value": 715807.22
-  },
-  {
-    "year": 2013,
-    "description": "LOCAÇÃO OU FRETAMENTO DE EMBARCAÇÕES",
-    "value": 69543.98
-  },
-  {
-    "year": 2013,
-    "description": "LOCAÇÃO OU FRETAMENTO DE VEÍCULOS AUTOMOTORES",
-    "value": 777335.39
-  },
-  {
-    "year": 2013,
-    "description": "MANUTENÇÃO DE ESCRITÓRIO DE APOIO À ATIVIDADE PARLAMENTAR",
+    "description": "manutenção de escritórios",
     "value": 18939465.02
   },
   {
     "year": 2013,
-    "description": "PASSAGEM AÉREA - REEMBOLSO",
-    "value": 4119655.36
-  },
-  { "year": 2013, "description": "PASSAGEM AÉREA - RPA", "value": 43416253.37 },
-  {
-    "year": 2013,
-    "description": "PASSAGENS TERRESTRES, MARÍTIMAS OU FLUVIAIS",
-    "value": 6791.05
+    "description": "cursos, congressos ou eventos",
+    "value": 144797.91
   },
   {
     "year": 2013,
-    "description": "SERVIÇO DE SEGURANÇA PRESTADO POR EMPRESA ESPECIALIZADA.",
+    "description": "passagens aéreas",
+    "value": 47535908.73
+  },
+  {
+    "year": 2013,
+    "description": "segurança",
     "value": 1156159.23
   },
   {
     "year": 2013,
-    "description": "SERVIÇO DE TÁXI, PEDÁGIO E ESTACIONAMENTO",
-    "value": 60512.11
+    "description": "serviços postais",
+    "value": 5261402.65
   },
-  { "year": 2013, "description": "SERVIÇOS POSTAIS", "value": 5261402.65 },
-  { "year": 2013, "description": "TELEFONIA", "value": 21244253.78 },
   {
-    "year": 2014,
-    "description": "ASSINATURA DE PUBLICAÇÕES",
-    "value": 156972.48
+    "year": 2013,
+    "description": "telefonia",
+    "value": 21244253.78
   },
   {
     "year": 2014,
-    "description": "COMBUSTÍVEIS E LUBRIFICANTES.",
-    "value": 15717836.16
-  },
-  {
-    "year": 2014,
-    "description": "CONSULTORIAS, PESQUISAS E TRABALHOS TÉCNICOS.",
-    "value": 18757928.7
-  },
-  {
-    "year": 2014,
-    "description": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
-    "value": 47947428.75
-  },
-  {
-    "year": 2014,
-    "description": "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR",
+    "description": "alimentação",
     "value": 1533166.81
   },
   {
     "year": 2014,
-    "description": "HOSPEDAGEM ,EXCETO DO PARLAMENTAR NO DISTRITO FEDERAL.",
+    "description": "combustíveis e lubrificantes",
+    "value": 15717836.16
+  },
+  {
+    "year": 2014,
+    "description": "consultorias e trabalhos técnicos",
+    "value": 18757928.7
+  },
+  {
+    "year": 2014,
+    "description": "divulgação da atividade parlamentar",
+    "value": 47947428.75
+  },
+  {
+    "year": 2014,
+    "description": "hospedagem",
     "value": 2042307.61
   },
   {
     "year": 2014,
-    "description": "LOCAÇÃO DE VEÍCULOS AUTOMOTORES OU FRETAMENTO DE EMBARCAÇÕES",
-    "value": 233082.66
+    "description": "locomoção",
+    "value": 24460826.86
   },
   {
     "year": 2014,
-    "description": "LOCAÇÃO OU FRETAMENTO DE AERONAVES",
-    "value": 5237462.24
-  },
-  {
-    "year": 2014,
-    "description": "LOCAÇÃO OU FRETAMENTO DE EMBARCAÇÕES",
-    "value": 274538.02
-  },
-  {
-    "year": 2014,
-    "description": "LOCAÇÃO OU FRETAMENTO DE VEÍCULOS AUTOMOTORES",
-    "value": 18059258.24
-  },
-  {
-    "year": 2014,
-    "description": "MANUTENÇÃO DE ESCRITÓRIO DE APOIO À ATIVIDADE PARLAMENTAR",
+    "description": "manutenção de escritórios",
     "value": 19008077.0
   },
   {
     "year": 2014,
-    "description": "PASSAGEM AÉREA - REEMBOLSO",
-    "value": 1157873.66
-  },
-  { "year": 2014, "description": "PASSAGEM AÉREA - RPA", "value": 42519711.86 },
-  {
-    "year": 2014,
-    "description": "PASSAGENS TERRESTRES, MARÍTIMAS OU FLUVIAIS",
-    "value": 67407.5
+    "description": "cursos, congressos ou eventos",
+    "value": 156972.48
   },
   {
     "year": 2014,
-    "description": "SERVIÇO DE SEGURANÇA PRESTADO POR EMPRESA ESPECIALIZADA.",
+    "description": "passagens aéreas",
+    "value": 43677585.52
+  },
+  {
+    "year": 2014,
+    "description": "segurança",
     "value": 1521833.71
   },
   {
     "year": 2014,
-    "description": "SERVIÇO DE TÁXI, PEDÁGIO E ESTACIONAMENTO",
-    "value": 589078.2
+    "description": "serviços postais",
+    "value": 5422035.5
   },
-  { "year": 2014, "description": "SERVIÇOS POSTAIS", "value": 5422035.5 },
-  { "year": 2014, "description": "TELEFONIA", "value": 18236153.63 },
   {
-    "year": 2015,
-    "description": "ASSINATURA DE PUBLICAÇÕES",
-    "value": 181656.99
+    "year": 2014,
+    "description": "telefonia",
+    "value": 18236153.63
   },
   {
     "year": 2015,
-    "description": "COMBUSTÍVEIS E LUBRIFICANTES.",
-    "value": 17641617.02
-  },
-  {
-    "year": 2015,
-    "description": "CONSULTORIAS, PESQUISAS E TRABALHOS TÉCNICOS.",
-    "value": 22124455.16
-  },
-  {
-    "year": 2015,
-    "description": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
-    "value": 50119761.44
-  },
-  {
-    "year": 2015,
-    "description": "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR",
+    "description": "alimentação",
     "value": 2190741.89
   },
   {
     "year": 2015,
-    "description": "HOSPEDAGEM ,EXCETO DO PARLAMENTAR NO DISTRITO FEDERAL.",
+    "description": "combustíveis e lubrificantes",
+    "value": 17641617.02
+  },
+  {
+    "year": 2015,
+    "description": "consultorias e trabalhos técnicos",
+    "value": 22124455.16
+  },
+  {
+    "year": 2015,
+    "description": "divulgação da atividade parlamentar",
+    "value": 50119761.44
+  },
+  {
+    "year": 2015,
+    "description": "hospedagem",
     "value": 2070258.17
   },
   {
     "year": 2015,
-    "description": "LOCAÇÃO OU FRETAMENTO DE AERONAVES",
-    "value": 2799230.07
+    "description": "locomoção",
+    "value": 28226295.17
   },
   {
     "year": 2015,
-    "description": "LOCAÇÃO OU FRETAMENTO DE EMBARCAÇÕES",
-    "value": 36932.2
-  },
-  {
-    "year": 2015,
-    "description": "LOCAÇÃO OU FRETAMENTO DE VEÍCULOS AUTOMOTORES",
-    "value": 24432375.69
-  },
-  {
-    "year": 2015,
-    "description": "MANUTENÇÃO DE ESCRITÓRIO DE APOIO À ATIVIDADE PARLAMENTAR",
+    "description": "manutenção de escritórios",
     "value": 23047445.59
   },
   {
     "year": 2015,
-    "description": "PARTICIPAÇÃO EM CURSO, PALESTRA OU EVENTO SIMILAR",
-    "value": 22440.0
+    "description": "cursos, congressos ou eventos",
+    "value": 204096.99
   },
   {
     "year": 2015,
-    "description": "PASSAGEM AÉREA - REEMBOLSO",
-    "value": 3023998.32
-  },
-  { "year": 2015, "description": "PASSAGEM AÉREA - RPA", "value": 48475098.0 },
-  {
-    "year": 2015,
-    "description": "PASSAGENS TERRESTRES, MARÍTIMAS OU FLUVIAIS",
-    "value": 89872.86
+    "description": "passagens aéreas",
+    "value": 51499096.32
   },
   {
     "year": 2015,
-    "description": "SERVIÇO DE SEGURANÇA PRESTADO POR EMPRESA ESPECIALIZADA.",
+    "description": "segurança",
     "value": 1591178.86
   },
   {
     "year": 2015,
-    "description": "SERVIÇO DE TÁXI, PEDÁGIO E ESTACIONAMENTO",
-    "value": 867884.35
+    "description": "serviços postais",
+    "value": 4205140.23
   },
-  { "year": 2015, "description": "SERVIÇOS POSTAIS", "value": 4205140.23 },
-  { "year": 2015, "description": "TELEFONIA", "value": 13371648.82 },
   {
-    "year": 2016,
-    "description": "ASSINATURA DE PUBLICAÇÕES",
-    "value": 411233.07
+    "year": 2015,
+    "description": "telefonia",
+    "value": 13371648.82
   },
   {
     "year": 2016,
-    "description": "COMBUSTÍVEIS E LUBRIFICANTES.",
-    "value": 19168647.23
-  },
-  {
-    "year": 2016,
-    "description": "CONSULTORIAS, PESQUISAS E TRABALHOS TÉCNICOS.",
-    "value": 23308464.0
-  },
-  {
-    "year": 2016,
-    "description": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
-    "value": 50973043.39
-  },
-  {
-    "year": 2016,
-    "description": "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR",
+    "description": "alimentação",
     "value": 1771594.6
   },
   {
     "year": 2016,
-    "description": "HOSPEDAGEM ,EXCETO DO PARLAMENTAR NO DISTRITO FEDERAL.",
+    "description": "combustíveis e lubrificantes",
+    "value": 19168647.23
+  },
+  {
+    "year": 2016,
+    "description": "consultorias e trabalhos técnicos",
+    "value": 23308464.0
+  },
+  {
+    "year": 2016,
+    "description": "divulgação da atividade parlamentar",
+    "value": 50973043.39
+  },
+  {
+    "year": 2016,
+    "description": "hospedagem",
     "value": 1944638.08
   },
   {
     "year": 2016,
-    "description": "LOCAÇÃO OU FRETAMENTO DE AERONAVES",
-    "value": 3439546.71
+    "description": "locomoção",
+    "value": 31938344.75
   },
   {
     "year": 2016,
-    "description": "LOCAÇÃO OU FRETAMENTO DE EMBARCAÇÕES",
-    "value": 28006.16
-  },
-  {
-    "year": 2016,
-    "description": "LOCAÇÃO OU FRETAMENTO DE VEÍCULOS AUTOMOTORES",
-    "value": 27483019.04
-  },
-  {
-    "year": 2016,
-    "description": "MANUTENÇÃO DE ESCRITÓRIO DE APOIO À ATIVIDADE PARLAMENTAR",
+    "description": "manutenção de escritórios",
     "value": 25169873.91
   },
   {
     "year": 2016,
-    "description": "PARTICIPAÇÃO EM CURSO, PALESTRA OU EVENTO SIMILAR",
-    "value": 226185.65
+    "description": "cursos, congressos ou eventos",
+    "value": 637418.72
   },
   {
     "year": 2016,
-    "description": "PASSAGEM AÉREA - REEMBOLSO",
-    "value": 2431640.94
-  },
-  { "year": 2016, "description": "PASSAGEM AÉREA - RPA", "value": 48339967.49 },
-  {
-    "year": 2016,
-    "description": "PASSAGENS TERRESTRES, MARÍTIMAS OU FLUVIAIS",
-    "value": 94792.65
+    "description": "passagens aéreas",
+    "value": 50771608.43
   },
   {
     "year": 2016,
-    "description": "SERVIÇO DE SEGURANÇA PRESTADO POR EMPRESA ESPECIALIZADA.",
+    "description": "segurança",
     "value": 1754034.79
   },
   {
     "year": 2016,
-    "description": "SERVIÇO DE TÁXI, PEDÁGIO E ESTACIONAMENTO",
-    "value": 892980.19
+    "description": "serviços postais",
+    "value": 3838023.94
   },
-  { "year": 2016, "description": "SERVIÇOS POSTAIS", "value": 3838023.94 },
-  { "year": 2016, "description": "TELEFONIA", "value": 11896710.93 },
   {
-    "year": 2017,
-    "description": "ASSINATURA DE PUBLICAÇÕES",
-    "value": 401451.4
+    "year": 2016,
+    "description": "telefonia",
+    "value": 11896710.93
   },
   {
     "year": 2017,
-    "description": "COMBUSTÍVEIS E LUBRIFICANTES.",
-    "value": 18751366.16
-  },
-  {
-    "year": 2017,
-    "description": "CONSULTORIAS, PESQUISAS E TRABALHOS TÉCNICOS.",
-    "value": 19537890.55
-  },
-  {
-    "year": 2017,
-    "description": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
-    "value": 58208996.37
-  },
-  {
-    "year": 2017,
-    "description": "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR",
+    "description": "alimentação",
     "value": 1346405.58
   },
   {
     "year": 2017,
-    "description": "HOSPEDAGEM ,EXCETO DO PARLAMENTAR NO DISTRITO FEDERAL.",
+    "description": "combustíveis e lubrificantes",
+    "value": 18751366.16
+  },
+  {
+    "year": 2017,
+    "description": "consultorias e trabalhos técnicos",
+    "value": 19537890.55
+  },
+  {
+    "year": 2017,
+    "description": "divulgação da atividade parlamentar",
+    "value": 58208996.37
+  },
+  {
+    "year": 2017,
+    "description": "hospedagem",
     "value": 1931835.58
   },
   {
     "year": 2017,
-    "description": "LOCAÇÃO OU FRETAMENTO DE AERONAVES",
-    "value": 2890086.49
+    "description": "locomoção",
+    "value": 32150070.34
   },
   {
     "year": 2017,
-    "description": "LOCAÇÃO OU FRETAMENTO DE EMBARCAÇÕES",
-    "value": 110380.8
-  },
-  {
-    "year": 2017,
-    "description": "LOCAÇÃO OU FRETAMENTO DE VEÍCULOS AUTOMOTORES",
-    "value": 27985842.17
-  },
-  {
-    "year": 2017,
-    "description": "MANUTENÇÃO DE ESCRITÓRIO DE APOIO À ATIVIDADE PARLAMENTAR",
+    "description": "manutenção de escritórios",
     "value": 24069027.11
   },
   {
     "year": 2017,
-    "description": "PARTICIPAÇÃO EM CURSO, PALESTRA OU EVENTO SIMILAR",
-    "value": 128034.75
+    "description": "cursos, congressos ou eventos",
+    "value": 529486.15
   },
   {
     "year": 2017,
-    "description": "PASSAGEM AÉREA - REEMBOLSO",
-    "value": 2614793.82
-  },
-  { "year": 2017, "description": "PASSAGEM AÉREA - RPA", "value": 52957685.08 },
-  {
-    "year": 2017,
-    "description": "PASSAGENS TERRESTRES, MARÍTIMAS OU FLUVIAIS",
-    "value": 128799.86
+    "description": "passagens aéreas",
+    "value": 55572478.9
   },
   {
     "year": 2017,
-    "description": "SERVIÇO DE SEGURANÇA PRESTADO POR EMPRESA ESPECIALIZADA.",
+    "description": "segurança",
     "value": 1674133.68
   },
   {
     "year": 2017,
-    "description": "SERVIÇO DE TÁXI, PEDÁGIO E ESTACIONAMENTO",
-    "value": 1034961.02
+    "description": "serviços postais",
+    "value": 3675355.26
   },
-  { "year": 2017, "description": "SERVIÇOS POSTAIS", "value": 3675355.26 },
-  { "year": 2017, "description": "TELEFONIA", "value": 10159081.41 },
   {
-    "year": 2018,
-    "description": "ASSINATURA DE PUBLICAÇÕES",
-    "value": 296233.29
+    "year": 2017,
+    "description": "telefonia",
+    "value": 10159081.41
   },
   {
     "year": 2018,
-    "description": "COMBUSTÍVEIS E LUBRIFICANTES.",
-    "value": 18135695.07
-  },
-  {
-    "year": 2018,
-    "description": "CONSULTORIAS, PESQUISAS E TRABALHOS TÉCNICOS.",
-    "value": 21712797.34
-  },
-  {
-    "year": 2018,
-    "description": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
-    "value": 52747071.39
-  },
-  {
-    "year": 2018,
-    "description": "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR",
+    "description": "alimentação",
     "value": 922840.31
   },
   {
     "year": 2018,
-    "description": "HOSPEDAGEM ,EXCETO DO PARLAMENTAR NO DISTRITO FEDERAL.",
+    "description": "combustíveis e lubrificantes",
+    "value": 18135695.07
+  },
+  {
+    "year": 2018,
+    "description": "consultorias e trabalhos técnicos",
+    "value": 21712797.34
+  },
+  {
+    "year": 2018,
+    "description": "divulgação da atividade parlamentar",
+    "value": 52747071.39
+  },
+  {
+    "year": 2018,
+    "description": "hospedagem",
     "value": 2179239.79
   },
   {
     "year": 2018,
-    "description": "LOCAÇÃO OU FRETAMENTO DE AERONAVES",
-    "value": 2530125.99
+    "description": "locomoção",
+    "value": 30599670.77
   },
   {
     "year": 2018,
-    "description": "LOCAÇÃO OU FRETAMENTO DE EMBARCAÇÕES",
-    "value": 184872.69
-  },
-  {
-    "year": 2018,
-    "description": "LOCAÇÃO OU FRETAMENTO DE VEÍCULOS AUTOMOTORES",
-    "value": 26915747.85
-  },
-  {
-    "year": 2018,
-    "description": "MANUTENÇÃO DE ESCRITÓRIO DE APOIO À ATIVIDADE PARLAMENTAR",
+    "description": "manutenção de escritórios",
     "value": 23154133.47
   },
   {
     "year": 2018,
-    "description": "PARTICIPAÇÃO EM CURSO, PALESTRA OU EVENTO SIMILAR",
-    "value": 87767.55
+    "description": "cursos, congressos ou eventos",
+    "value": 384000.84
   },
   {
     "year": 2018,
-    "description": "PASSAGEM AÉREA - REEMBOLSO",
-    "value": 2124514.5
-  },
-  { "year": 2018, "description": "PASSAGEM AÉREA - RPA", "value": 53381855.91 },
-  {
-    "year": 2018,
-    "description": "PASSAGENS TERRESTRES, MARÍTIMAS OU FLUVIAIS",
-    "value": 87601.18
+    "description": "passagens aéreas",
+    "value": 55506370.41
   },
   {
     "year": 2018,
-    "description": "SERVIÇO DE SEGURANÇA PRESTADO POR EMPRESA ESPECIALIZADA.",
+    "description": "segurança",
     "value": 1238201.99
   },
   {
     "year": 2018,
-    "description": "SERVIÇO DE TÁXI, PEDÁGIO E ESTACIONAMENTO",
-    "value": 881323.06
+    "description": "serviços postais",
+    "value": 2746978.21
   },
-  { "year": 2018, "description": "SERVIÇOS POSTAIS", "value": 2746978.21 },
-  { "year": 2018, "description": "TELEFONIA", "value": 8043321.11 },
   {
-    "year": 2019,
-    "description": "ASSINATURA DE PUBLICAÇÕES",
-    "value": 285218.44
+    "year": 2018,
+    "description": "telefonia",
+    "value": 8043321.11
   },
   {
     "year": 2019,
-    "description": "COMBUSTÍVEIS E LUBRIFICANTES.",
-    "value": 16779150.46
-  },
-  {
-    "year": 2019,
-    "description": "CONSULTORIAS, PESQUISAS E TRABALHOS TÉCNICOS.",
-    "value": 20508379.62
-  },
-  {
-    "year": 2019,
-    "description": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
-    "value": 49615888.0
-  },
-  {
-    "year": 2019,
-    "description": "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR",
+    "description": "alimentação",
     "value": 1309293.96
   },
   {
     "year": 2019,
-    "description": "HOSPEDAGEM ,EXCETO DO PARLAMENTAR NO DISTRITO FEDERAL.",
+    "description": "combustíveis e lubrificantes",
+    "value": 16779150.46
+  },
+  {
+    "year": 2019,
+    "description": "consultorias e trabalhos técnicos",
+    "value": 20508379.62
+  },
+  {
+    "year": 2019,
+    "description": "divulgação da atividade parlamentar",
+    "value": 49615888.0
+  },
+  {
+    "year": 2019,
+    "description": "hospedagem",
     "value": 1807579.1
   },
   {
     "year": 2019,
-    "description": "LOCAÇÃO OU FRETAMENTO DE AERONAVES",
-    "value": 1473615.0
+    "description": "locomoção",
+    "value": 29333077.5
   },
   {
     "year": 2019,
-    "description": "LOCAÇÃO OU FRETAMENTO DE EMBARCAÇÕES",
-    "value": 105950.0
-  },
-  {
-    "year": 2019,
-    "description": "LOCAÇÃO OU FRETAMENTO DE VEÍCULOS AUTOMOTORES",
-    "value": 26680598.31
-  },
-  {
-    "year": 2019,
-    "description": "MANUTENÇÃO DE ESCRITÓRIO DE APOIO À ATIVIDADE PARLAMENTAR",
+    "description": "manutenção de escritórios",
     "value": 23477943.49
   },
   {
     "year": 2019,
-    "description": "PARTICIPAÇÃO EM CURSO, PALESTRA OU EVENTO SIMILAR",
-    "value": 112187.34
+    "description": "cursos, congressos ou eventos",
+    "value": 397405.78
   },
   {
     "year": 2019,
-    "description": "PASSAGEM AÉREA - REEMBOLSO",
-    "value": 3717802.51
-  },
-  { "year": 2019, "description": "PASSAGEM AÉREA - RPA", "value": 53909288.88 },
-  { "year": 2019, "description": "PASSAGEM AÉREA - SIGEPA", "value": 45620.3 },
-  {
-    "year": 2019,
-    "description": "PASSAGENS TERRESTRES, MARÍTIMAS OU FLUVIAIS",
-    "value": 136952.78
+    "description": "passagens aéreas",
+    "value": 57672711.69
   },
   {
     "year": 2019,
-    "description": "SERVIÇO DE SEGURANÇA PRESTADO POR EMPRESA ESPECIALIZADA.",
+    "description": "segurança",
     "value": 1092091.24
   },
   {
     "year": 2019,
-    "description": "SERVIÇO DE TÁXI, PEDÁGIO E ESTACIONAMENTO",
-    "value": 935961.41
+    "description": "serviços postais",
+    "value": 1922829.94
   },
-  { "year": 2019, "description": "SERVIÇOS POSTAIS", "value": 1922829.94 },
-  { "year": 2019, "description": "TELEFONIA", "value": 5288432.33 },
   {
-    "year": 2020,
-    "description": "ASSINATURA DE PUBLICAÇÕES",
-    "value": 122401.62
+    "year": 2019,
+    "description": "telefonia",
+    "value": 5288432.33
   },
   {
     "year": 2020,
-    "description": "COMBUSTÍVEIS E LUBRIFICANTES.",
-    "value": 4953204.37
-  },
-  {
-    "year": 2020,
-    "description": "CONSULTORIAS, PESQUISAS E TRABALHOS TÉCNICOS.",
-    "value": 9182088.41
-  },
-  {
-    "year": 2020,
-    "description": "DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR.",
-    "value": 21509795.82
-  },
-  {
-    "year": 2020,
-    "description": "FORNECIMENTO DE ALIMENTAÇÃO DO PARLAMENTAR",
+    "description": "alimentação",
     "value": 193901.73
   },
   {
     "year": 2020,
-    "description": "HOSPEDAGEM ,EXCETO DO PARLAMENTAR NO DISTRITO FEDERAL.",
+    "description": "combustíveis e lubrificantes",
+    "value": 4953204.37
+  },
+  {
+    "year": 2020,
+    "description": "consultorias e trabalhos técnicos",
+    "value": 9182088.41
+  },
+  {
+    "year": 2020,
+    "description": "divulgação da atividade parlamentar",
+    "value": 21509795.82
+  },
+  {
+    "year": 2020,
+    "description": "hospedagem",
     "value": 339337.45
   },
   {
     "year": 2020,
-    "description": "LOCAÇÃO OU FRETAMENTO DE AERONAVES",
-    "value": 469242.0
+    "description": "locomoção",
+    "value": 12573914.14
   },
   {
     "year": 2020,
-    "description": "LOCAÇÃO OU FRETAMENTO DE EMBARCAÇÕES",
-    "value": 78490.0
-  },
-  {
-    "year": 2020,
-    "description": "LOCAÇÃO OU FRETAMENTO DE VEÍCULOS AUTOMOTORES",
-    "value": 11768097.25
-  },
-  {
-    "year": 2020,
-    "description": "MANUTENÇÃO DE ESCRITÓRIO DE APOIO À ATIVIDADE PARLAMENTAR",
+    "description": "manutenção de escritórios",
     "value": 11641879.74
   },
   {
     "year": 2020,
-    "description": "PARTICIPAÇÃO EM CURSO, PALESTRA OU EVENTO SIMILAR",
-    "value": 22580.0
+    "description": "cursos, congressos ou eventos",
+    "value": 144981.62
   },
   {
     "year": 2020,
-    "description": "PASSAGEM AÉREA - REEMBOLSO",
-    "value": 547200.16
-  },
-  { "year": 2020, "description": "PASSAGEM AÉREA - RPA", "value": 2057617.85 },
-  { "year": 2020, "description": "PASSAGEM AÉREA - SIGEPA", "value": 42786.62 },
-  {
-    "year": 2020,
-    "description": "PASSAGENS TERRESTRES, MARÍTIMAS OU FLUVIAIS",
-    "value": 19538.57
+    "description": "passagens aéreas",
+    "value": 2647604.63
   },
   {
     "year": 2020,
-    "description": "SERVIÇO DE SEGURANÇA PRESTADO POR EMPRESA ESPECIALIZADA.",
+    "description": "segurança",
     "value": 471103.81
   },
   {
     "year": 2020,
-    "description": "SERVIÇO DE TÁXI, PEDÁGIO E ESTACIONAMENTO",
-    "value": 238546.32
+    "description": "serviços postais",
+    "value": 563516.99
   },
-  { "year": 2020, "description": "SERVIÇOS POSTAIS", "value": 563516.99 },
-  { "year": 2020, "description": "TELEFONIA", "value": 1745608.82 }
+  {
+    "year": 2020,
+    "description": "telefonia",
+    "value": 1745608.82
+  }
 ]
