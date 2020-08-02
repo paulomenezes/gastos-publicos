@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import * as d3 from 'd3';
 
-import data from './data.json';
+import dataCamara from './data-camara.json';
 import dataSenado from './data-senado.json';
 
 interface CotaParlamentarData {
@@ -12,7 +12,7 @@ interface CotaParlamentarData {
 export function CotaParlamentar() {
   useEffect(() => {
     const margin = {
-      top: 10,
+      top: 20,
       bottom: 30,
       left: 70,
       right: 10,
@@ -31,13 +31,13 @@ export function CotaParlamentar() {
     const xAccessor = (d: CotaParlamentarData) => d.year.toString();
     const yAccessor = (d: CotaParlamentarData) => d.value;
 
-    const keys = data.map(xAccessor);
+    const keys = dataCamara.map(xAccessor);
 
-    const yMax = d3.max(data, yAccessor) as number;
+    const yMax = d3.max(dataCamara, yAccessor) as number;
 
     const xScale = d3
       .scaleBand()
-      .domain(data.map(xAccessor))
+      .domain(dataCamara.map(xAccessor))
       .range([margin.left, width - margin.right])
       .paddingInner(0.1)
       .paddingOuter(0.1);
@@ -66,7 +66,7 @@ export function CotaParlamentar() {
     const formatter = locale.format('$,.2f');
 
     groups
-      .on('mouseenter', function (d) {
+      .on('mouseenter', (d) => {
         const x = (xScale(d) as number) + xScale.bandwidth() / 2;
 
         const groupTooltip = svg
@@ -120,7 +120,8 @@ export function CotaParlamentar() {
           {
             key: 'camara',
             description: 'câmara',
-            value: data.find((dt) => dt.year.toString() === d)?.value as number,
+            value: dataCamara.find((dt) => dt.year.toString() === d)
+              ?.value as number,
           },
           {
             key: 'senado',
@@ -144,30 +145,29 @@ export function CotaParlamentar() {
           .attr('height', 10)
           .attr('rx', 2)
           .attr('ry', 2)
-          .attr('fill', (d) => colorScale(d.key))
-          .attr('transform', (d, i) => `translate(0, ${32 + i * 20})`)
-          .text((d) => d.description);
+          .attr('fill', (dt) => colorScale(dt.key))
+          .attr('transform', (_, i) => `translate(0, ${32 + i * 20})`);
 
         tooltipBody
           .append('text')
           .attr('font-size', 12)
-          .attr('transform', (d, i) => `translate(15, ${40 + i * 20})`)
-          .text((d) => d.description);
+          .attr('transform', (_, i) => `translate(15, ${40 + i * 20})`)
+          .text((dt) => dt.description);
 
         tooltipBody
           .append('text')
           .attr('font-size', 12)
-          .attr('transform', (d, i) => `translate(200, ${40 + i * 20})`)
+          .attr('transform', (_, i) => `translate(200, ${40 + i * 20})`)
           .attr('text-anchor', 'end')
-          .text((d) => formatter(d.value));
+          .text((dt) => formatter(dt.value));
       })
-      .on('mouseleave', function () {
+      .on('mouseleave', () => {
         d3.selectAll('.group-tooltip').remove();
       });
 
     groups
       .selectAll('rect.camara')
-      .data((d) => data.filter((dt) => dt.year.toString() === d))
+      .data((d) => dataCamara.filter((dt) => dt.year.toString() === d))
       .enter()
       .append('rect')
       .attr('class', 'camara')
@@ -201,6 +201,51 @@ export function CotaParlamentar() {
       .append('g')
       .call(yAxis)
       .attr('transform', `translate(${margin.left}, 0)`);
+
+    const dataLegend = [
+      {
+        key: 'camara',
+        description: 'câmara',
+      },
+      {
+        key: 'senado',
+        description: 'senado',
+      },
+    ];
+
+    const legendGroup = svg.append('g').attr('class', 'legend');
+
+    const legendBody = legendGroup
+      .selectAll('g.data-row')
+      .data(dataLegend)
+      .enter()
+      .append('g')
+      .attr('class', 'data-row')
+      .attr('transform', `translate(72, 0)`)
+      .attr('cursor', 'pointer')
+      .on('mouseenter', (d) => {
+        const key = d.key === 'senado' ? 'camara' : 'senado';
+        d3.selectAll(`rect.${key}`).attr('opacity', 0.5);
+      })
+      .on('mouseleave', () => {
+        d3.selectAll('rect.senado').attr('opacity', 1);
+        d3.selectAll('rect.camara').attr('opacity', 1);
+      });
+
+    legendBody
+      .append('rect')
+      .attr('width', 10)
+      .attr('height', 10)
+      .attr('rx', 2)
+      .attr('ry', 2)
+      .attr('fill', (d) => colorScale(d.key))
+      .attr('transform', (_, i) => `translate(${i * 80}, 0)`);
+
+    legendBody
+      .append('text')
+      .attr('font-size', 12)
+      .attr('transform', (_, i) => `translate(${15 + i * 80}, 8)`)
+      .text((d) => d.description);
   }, []);
 
   return <div id="cota-parlamentar"></div>;
