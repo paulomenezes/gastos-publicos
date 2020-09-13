@@ -51,7 +51,7 @@ const dataInputMunicipal = [
   { name: 'Outros', type: 'Outros', value: 1.32 },
 ];
 
-const dataOF = [
+const dataOutputFederal = [
   { name: 'Benefícios previdenciários', value: 21.8 },
   { name: 'Pessoal', value: 7.1 },
   { name: 'Inativos', value: 4.7 },
@@ -63,13 +63,13 @@ const dataOF = [
   { name: 'Outras despesas federais', value: 4.1 },
 ];
 
-const dataOE = [
+const dataOutputEstadual = [
   { name: 'Despesa com pessoal', value: 14.9 },
   { name: 'Investimentos', value: 1.8 },
   { name: 'Outras despesas estaduais', value: 11.7 },
 ];
 
-const dataOM = [
+const dataOutputMunicipal = [
   { name: 'Despesa com pessoal', value: 10.7 },
   { name: 'Investimentos', value: 0.9 },
   { name: 'Outras despesas', value: 7.1 },
@@ -77,7 +77,7 @@ const dataOM = [
 
 export function Sankey() {
   useEffect(() => {
-    const height = 2000;
+    const height = 1400;
 
     const svg = d3
       .select('#sankey')
@@ -93,18 +93,24 @@ export function Sankey() {
         y: 150,
         width: 100,
         height: 400,
+        name: 'FEDERAL',
+        total: 'R$1,55 trilhão',
       },
       estadual: {
         x: 1000,
         y: 700,
         width: 100,
         height: 200,
+        name: 'ESTADUAL',
+        total: 'R$650,3 bilhões',
       },
       municipal: {
         x: 1200,
         y: 1050,
         width: 100,
         height: 150,
+        name: 'MUNICIPAL',
+        total: 'R$172 bilhões',
       },
     };
 
@@ -193,7 +199,7 @@ export function Sankey() {
     ];
 
     let startOutputFederal = groups.federal.y;
-    let endOutputFederal = groups.federal.y - 70;
+    let endOutputFederal = groups.federal.y - 300;
 
     let startOutputEstadual = groups.estadual.y;
     let endOutputEstadual = groups.estadual.y - 80;
@@ -202,11 +208,11 @@ export function Sankey() {
     let endOutputMunicipal = groups.municipal.y - 80;
 
     const linesOutput = [
-      dataOF.map((d, i) => {
+      dataOutputFederal.map((d) => {
         const size = groups.federal.height * (d.value / 59);
 
         startOutputFederal += size;
-        endOutputFederal += Math.max(...dataOF.map((d) => d.value)) * 2.7; //size * 2.1;
+        endOutputFederal += size * 2.1;
 
         return {
           size,
@@ -227,11 +233,12 @@ export function Sankey() {
           ]),
         };
       }),
-      dataOE.map((d, i) => {
+      dataOutputEstadual.map((d) => {
         const size = groups.estadual.height * (d.value / 32);
 
         startOutputEstadual += size;
-        endOutputEstadual += Math.max(...dataOE.map((d) => d.value)) * 5;
+        endOutputEstadual +=
+          Math.max(...dataOutputEstadual.map((d) => d.value)) * 5;
 
         return {
           size,
@@ -258,11 +265,12 @@ export function Sankey() {
           ]),
         };
       }),
-      dataOM.map((d, i) => {
+      dataOutputMunicipal.map((d) => {
         const size = groups.estadual.height * (d.value / 25);
 
         startOutputMunicipal += size;
-        endOutputMunicipal += Math.max(...dataOE.map((d) => d.value)) * 5;
+        endOutputMunicipal +=
+          Math.max(...dataOutputEstadual.map((d) => d.value)) * 5;
 
         return {
           size,
@@ -293,63 +301,67 @@ export function Sankey() {
 
     const group = svg.append('g').attr('transform', 'translate(0, 50)');
 
-    group
-      .append('path')
-      .attr(
-        'd',
-        lineGenerator([
+    const extraPaths = [
+      {
+        color: '#DE5E6D',
+        path: lineGenerator([
           [groups.federal.x + groups.federal.width - 10, endFederal - 35],
           [groups.federal.x + groups.federal.width + 10, endFederal - 25],
           [groups.estadual.x - 10, groups.estadual.y + 5],
           [groups.estadual.x + 10, groups.estadual.y + 15],
-        ])!
-      )
-      .attr('stroke', '#DE5E6D')
-      .attr('stroke-width', 20)
-      .attr('fill', 'none');
-
-    group
-      .append('path')
-      .attr(
-        'd',
-        lineGenerator([
+        ]),
+      },
+      {
+        color: '#7591C1',
+        path: lineGenerator([
           [groups.estadual.x + groups.estadual.width - 10, endEstadual - 15],
           [groups.estadual.x + groups.estadual.width + 10, endEstadual - 5],
           [groups.municipal.x - 10, groups.municipal.y + 5],
           [groups.municipal.x + 10, groups.municipal.y + 15],
-        ])!
-      )
-      .attr('stroke', '#7591C1')
-      .attr('stroke-width', (d) => 20)
-      .attr('fill', 'none');
-
-    group
-      .append('path')
-      .attr(
-        'd',
-        lineGenerator([
+        ]),
+      },
+      {
+        color: '#DE5E6D',
+        path: lineGenerator([
           [groups.federal.x + groups.federal.width - 10, endFederal - 15],
           [groups.federal.x + groups.federal.width + 10, endFederal - 5],
           [groups.federal.x + groups.federal.width + 50, 850],
           [groups.federal.x + groups.federal.width + 70, 900],
           [groups.municipal.x - 20, groups.municipal.y + 30],
           [groups.municipal.x, groups.municipal.y + 30],
-        ])!
-      )
-      .attr('stroke', '#DE5E6D')
-      .attr('stroke-width', (d) => 20)
-      .attr('fill', 'none');
+        ]),
+      },
+    ];
 
-    const myColor = d3
+    group
+      .selectAll('path.extra-path')
+      .data(extraPaths)
+      .enter()
+      .append('path')
+      .attr('d', (d) => d.path)
+      .attr('stroke', (d) => d.color)
+      .attr('stroke-width', 20)
+      .attr('fill', 'none')
+      .attr('pointer-events', 'visibleStroke')
+      .on('mouseover', function () {
+        d3.select(this).attr('stroke-opacity', 0.8);
+      })
+      .on('mouseout', function () {
+        d3.select(this).attr('stroke-opacity', 1);
+      });
+
+    const types = [
+      { name: 'Renda', x: 0 },
+      { name: 'Resultado da empresa', x: 100 },
+      { name: 'Salários e mão de obra', x: 320 },
+      { name: 'Transações financeiras', x: 550 },
+      { name: 'Propriedades', x: 780 },
+      { name: 'Outros', x: 930 },
+    ];
+
+    const typeColors = d3
       .scaleOrdinal()
-      .domain([
-        'Renda',
-        'Resultado da empresa',
-        'Salários e mão de obra',
-        'Transações financeiras',
-        'Propriedades',
-        'Outros',
-      ])
+      .domain(types.map((t) => t.name))
       .range([
         '#DE5E6D',
         '#E9B8BB',
@@ -358,6 +370,31 @@ export function Sankey() {
         '#8B4C92',
         '#868686',
       ]);
+
+    const groupLegend = group.append('g').attr('class', 'legend');
+
+    const groupLegendItem = groupLegend
+      .selectAll('g.legend-item')
+      .data(types)
+      .enter()
+      .append('g')
+      .attr('transform', 'translate(390, 0)');
+
+    groupLegendItem
+      .append('rect')
+      .attr('x', (d) => d.x)
+      .attr('y', 10)
+      .attr('rx', 5)
+      .attr('ry', 5)
+      .attr('width', 15)
+      .attr('height', 15)
+      .attr('fill', (d) => typeColors(d.name) as string);
+
+    groupLegendItem
+      .append('text')
+      .attr('x', (d) => 20 + d.x)
+      .attr('y', 22)
+      .text((d) => d.name);
 
     const groupAllInputs = group
       .selectAll('g.input')
@@ -376,9 +413,16 @@ export function Sankey() {
     groupInput
       .append('path')
       .attr('d', (d) => d.line)
-      .attr('stroke', (d) => myColor(d.type) as string)
+      .attr('stroke', (d) => typeColors(d.type) as string)
       .attr('stroke-width', (d) => d.size)
-      .attr('fill', 'none');
+      .attr('fill', 'none')
+      .attr('pointer-events', 'visibleStroke')
+      .on('mouseover', function () {
+        d3.select(this).attr('stroke-opacity', 0.8);
+      })
+      .on('mouseout', function () {
+        d3.select(this).attr('stroke-opacity', 1);
+      });
 
     groupInput
       .append('text')
@@ -407,7 +451,14 @@ export function Sankey() {
       .attr('d', (d) => d.line)
       .attr('stroke', '#C0C0C0')
       .attr('stroke-width', (d) => d.size)
-      .attr('fill', 'none');
+      .attr('fill', 'none')
+      .attr('pointer-events', 'visibleStroke')
+      .on('mouseover', function () {
+        d3.select(this).attr('stroke-opacity', 0.8);
+      })
+      .on('mouseout', function () {
+        d3.select(this).attr('stroke-opacity', 1);
+      });
 
     groupOutput
       .append('text')
@@ -416,26 +467,54 @@ export function Sankey() {
       .attr('font-size', 12)
       .text((d) => d.name);
 
-    group
-      .append('rect')
-      .attr('width', groups.federal.width)
-      .attr('height', groups.federal.height)
-      .attr('x', groups.federal.x)
-      .attr('y', groups.federal.y);
+    const groupTotal = group
+      .selectAll('g.total')
+      .data(Object.values(groups))
+      .enter()
+      .append('g')
+      .attr('class', 'total');
 
-    group
+    groupTotal
       .append('rect')
-      .attr('width', groups.estadual.width)
-      .attr('height', groups.estadual.height)
-      .attr('x', groups.estadual.x)
-      .attr('y', groups.estadual.y);
+      .attr('width', (d) => d.width)
+      .attr('height', (d) => d.height)
+      .attr('x', (d) => d.x)
+      .attr('y', (d) => d.y);
 
-    group
-      .append('rect')
-      .attr('width', groups.municipal.width)
-      .attr('height', groups.municipal.height)
-      .attr('x', groups.municipal.x)
-      .attr('y', groups.municipal.y);
+    groupTotal
+      .append('text')
+      .attr('x', (d) => d.x + d.width / 2)
+      .attr('y', (d) => d.y + d.height / 2 - 30)
+      .attr('fill', 'white')
+      .attr('text-anchor', 'middle')
+      .text((d) => d.name);
+
+    groupTotal
+      .append('text')
+      .attr('x', (d) => d.x + d.width / 2)
+      .attr('y', (d) => d.y + d.height / 2 - 30 + 30)
+      .attr('fill', 'white')
+      .attr('text-anchor', 'middle')
+      .attr('font-size', 12)
+      .text('Total');
+
+    groupTotal
+      .append('text')
+      .attr('x', (d) => d.x + d.width / 2)
+      .attr('y', (d) => d.y + d.height / 2 - 30 + 45)
+      .attr('fill', 'white')
+      .attr('text-anchor', 'middle')
+      .attr('font-size', 12)
+      .text('arrecadado');
+
+    groupTotal
+      .append('text')
+      .attr('x', (d) => d.x + d.width / 2)
+      .attr('y', (d) => d.y + d.height / 2 - 30 + 60)
+      .attr('fill', 'white')
+      .attr('text-anchor', 'middle')
+      .attr('font-size', 12)
+      .text((d) => d.total);
   }, []);
 
   return <div id="sankey"></div>;
