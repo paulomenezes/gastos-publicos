@@ -15,12 +15,12 @@ const dataInputFederal = [
     value: 0.73,
   },
   { name: 'FGTS', type: 'Salários e mão de obra', value: 4.96 },
-  { name: 'Cofins', type: 'Transações financeiras', value: 9.96 },
-  { name: 'PIS/Pasep', type: 'Transações financeiras', value: 2.64 },
-  { name: 'IPI', type: 'Transações financeiras', value: 2.25 },
+  { name: 'Cofins', type: 'Consumo (bens e serviços)', value: 9.96 },
+  { name: 'PIS/Pasep', type: 'Consumo (bens e serviços)', value: 2.64 },
+  { name: 'IPI', type: 'Consumo (bens e serviços)', value: 2.25 },
   {
     name: 'Imposto sobre comércio exterior',
-    type: 'Transações financeiras',
+    type: 'Consumo (bens e serviços)',
     value: 1.7,
   },
   { name: 'IOF', type: 'Transações financeiras', value: 1.51 },
@@ -133,6 +133,7 @@ export function Sankey() {
         const returnObject = {
           size,
           name: d.name,
+          value: d.value,
           type: d.type,
           x: 10,
           y: startFederal,
@@ -157,6 +158,7 @@ export function Sankey() {
         const returnObject = {
           size,
           name: d.name,
+          value: d.value,
           type: d.type,
           x: 10,
           y: startEstadual,
@@ -181,6 +183,7 @@ export function Sankey() {
         const returnObject = {
           size,
           name: d.name,
+          value: d.value,
           type: d.type,
           x: 10,
           y: startMunicipal,
@@ -217,6 +220,7 @@ export function Sankey() {
         return {
           size,
           name: d.name,
+          value: d.value,
           x: 890 - groups.federal.width + groups.federal.x,
           y: endOutputFederal,
           line: lineGenerator([
@@ -243,6 +247,7 @@ export function Sankey() {
         return {
           size,
           name: d.name,
+          value: d.value,
           x: 690 - groups.estadual.width + groups.estadual.x,
           y: endOutputEstadual,
           line: lineGenerator([
@@ -275,6 +280,7 @@ export function Sankey() {
         return {
           size,
           name: d.name,
+          value: d.value,
           x: 490 - groups.municipal.width + groups.municipal.x,
           y: endOutputMunicipal,
           line: lineGenerator([
@@ -304,6 +310,10 @@ export function Sankey() {
     const extraPaths = [
       {
         color: '#DE5E6D',
+        x: groups.federal.x + groups.federal.width - 10,
+        y: endFederal - 35,
+        name: 'Federal -> Estadual',
+        value: 10,
         path: lineGenerator([
           [groups.federal.x + groups.federal.width - 10, endFederal - 35],
           [groups.federal.x + groups.federal.width + 10, endFederal - 25],
@@ -313,6 +323,10 @@ export function Sankey() {
       },
       {
         color: '#7591C1',
+        x: groups.estadual.x + groups.estadual.width - 10,
+        y: endEstadual - 15,
+        name: 'Estadual -> Municipal',
+        value: 10,
         path: lineGenerator([
           [groups.estadual.x + groups.estadual.width - 10, endEstadual - 15],
           [groups.estadual.x + groups.estadual.width + 10, endEstadual - 5],
@@ -322,6 +336,10 @@ export function Sankey() {
       },
       {
         color: '#DE5E6D',
+        x: groups.federal.x + groups.federal.width - 10,
+        y: endFederal - 15,
+        name: 'Federal -> Municipal',
+        value: 10,
         path: lineGenerator([
           [groups.federal.x + groups.federal.width - 10, endFederal - 15],
           [groups.federal.x + groups.federal.width + 10, endFederal - 5],
@@ -343,20 +361,62 @@ export function Sankey() {
       .attr('stroke-width', 20)
       .attr('fill', 'none')
       .attr('pointer-events', 'visibleStroke')
-      .on('mouseover', function () {
+      .on('mouseover', function (d) {
+        let { x, y } = d;
+
+        x += 10;
+        y += 20;
+
         d3.select(this).attr('stroke-opacity', 0.8);
+
+        const groupTooltip = svg
+          .append('g')
+          .attr('class', 'group-tooltip')
+          .attr('pointer-events', 'none');
+
+        const tooltipContainer = groupTooltip
+          .append('g')
+          .attr('transform', `translate(${x}, ${y})`);
+
+        tooltipContainer
+          .append('rect')
+          .attr('width', 200)
+          .attr('height', 38)
+          .attr('rx', 5)
+          .attr('ry', 5)
+          .attr('fill', '#fff')
+          .attr('stroke', '#CCC');
+
+        const tooltipHeader = tooltipContainer
+          .append('g')
+          .attr('transform', `translate(5, 0)`);
+
+        tooltipHeader
+          .append('text')
+          .attr('font-size', 12)
+          .attr('font-weight', 'bold')
+          .attr('transform', 'translate(0, 15)')
+          .text(d.name);
+
+        tooltipHeader
+          .append('text')
+          .attr('font-size', 12)
+          .attr('transform', 'translate(0, 30)')
+          .text(`Porcentagem: ${d.value}%`);
       })
       .on('mouseout', function () {
         d3.select(this).attr('stroke-opacity', 1);
+        d3.selectAll('.group-tooltip').remove();
       });
 
     const types = [
       { name: 'Renda', x: 0 },
-      { name: 'Resultado da empresa', x: 100 },
-      { name: 'Salários e mão de obra', x: 320 },
-      { name: 'Transações financeiras', x: 550 },
-      { name: 'Propriedades', x: 780 },
-      { name: 'Outros', x: 930 },
+      { name: 'Consumo (bens e serviços)', x: 80 },
+      { name: 'Resultado da empresa', x: 320 },
+      { name: 'Salários e mão de obra', x: 520 },
+      { name: 'Transações financeiras', x: 740 },
+      { name: 'Propriedades', x: 950 },
+      { name: 'Outros', x: 1080 },
     ];
 
     const typeColors = d3
@@ -364,6 +424,7 @@ export function Sankey() {
       .domain(types.map((t) => t.name))
       .range([
         '#DE5E6D',
+        '#7591C0',
         '#E9B8BB',
         '#384A78',
         '#3572B0',
@@ -417,11 +478,51 @@ export function Sankey() {
       .attr('stroke-width', (d) => d.size)
       .attr('fill', 'none')
       .attr('pointer-events', 'visibleStroke')
-      .on('mouseover', function () {
+      .on('mouseover', function (d) {
+        let { x, y } = d;
+
+        x += 170;
+
         d3.select(this).attr('stroke-opacity', 0.8);
+
+        const groupTooltip = svg
+          .append('g')
+          .attr('class', 'group-tooltip')
+          .attr('pointer-events', 'none');
+
+        const tooltipContainer = groupTooltip
+          .append('g')
+          .attr('transform', `translate(${x}, ${y})`);
+
+        tooltipContainer
+          .append('rect')
+          .attr('width', 200)
+          .attr('height', 38)
+          .attr('rx', 5)
+          .attr('ry', 5)
+          .attr('fill', '#fff')
+          .attr('stroke', '#CCC');
+
+        const tooltipHeader = tooltipContainer
+          .append('g')
+          .attr('transform', `translate(5, 0)`);
+
+        tooltipHeader
+          .append('text')
+          .attr('font-size', 12)
+          .attr('font-weight', 'bold')
+          .attr('transform', 'translate(0, 15)')
+          .text(d.name);
+
+        tooltipHeader
+          .append('text')
+          .attr('font-size', 12)
+          .attr('transform', 'translate(0, 30)')
+          .text(`Porcentagem: ${d.value}%`);
       })
       .on('mouseout', function () {
         d3.select(this).attr('stroke-opacity', 1);
+        d3.selectAll('.group-tooltip').remove();
       });
 
     groupInput
@@ -453,11 +554,52 @@ export function Sankey() {
       .attr('stroke-width', (d) => d.size)
       .attr('fill', 'none')
       .attr('pointer-events', 'visibleStroke')
-      .on('mouseover', function () {
+      .on('mouseover', function (d) {
+        let { x, y } = d;
+
+        x += 10;
+        y += 20;
+
         d3.select(this).attr('stroke-opacity', 0.8);
+
+        const groupTooltip = svg
+          .append('g')
+          .attr('class', 'group-tooltip')
+          .attr('pointer-events', 'none');
+
+        const tooltipContainer = groupTooltip
+          .append('g')
+          .attr('transform', `translate(${x}, ${y})`);
+
+        tooltipContainer
+          .append('rect')
+          .attr('width', 200)
+          .attr('height', 38)
+          .attr('rx', 5)
+          .attr('ry', 5)
+          .attr('fill', '#fff')
+          .attr('stroke', '#CCC');
+
+        const tooltipHeader = tooltipContainer
+          .append('g')
+          .attr('transform', `translate(5, 0)`);
+
+        tooltipHeader
+          .append('text')
+          .attr('font-size', 12)
+          .attr('font-weight', 'bold')
+          .attr('transform', 'translate(0, 15)')
+          .text(d.name);
+
+        tooltipHeader
+          .append('text')
+          .attr('font-size', 12)
+          .attr('transform', 'translate(0, 30)')
+          .text(`Porcentagem: ${d.value}%`);
       })
       .on('mouseout', function () {
         d3.select(this).attr('stroke-opacity', 1);
+        d3.selectAll('.group-tooltip').remove();
       });
 
     groupOutput
