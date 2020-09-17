@@ -31,7 +31,8 @@ export function CategoriaDespesaSenado() {
       [year: number]: GroupCategoriaDespesa;
     } = {};
 
-    data.sort((a, b) => a.value - b.value);
+    data.reverse();
+    // data.sort((a, b) => a.value - b.value);
 
     for (const d of data) {
       if (!groupData[d.year]) {
@@ -62,7 +63,7 @@ export function CategoriaDespesaSenado() {
     const svg = d3
       .select('#categoria-despesa-senado')
       .append('svg')
-      .attr('width', '100%')
+      .attr('width', 800)
       .attr('height', height);
 
     const width = svg.node()?.getBoundingClientRect().width as number;

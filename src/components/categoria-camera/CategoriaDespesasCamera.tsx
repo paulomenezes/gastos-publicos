@@ -31,7 +31,8 @@ export function CategoriaDespesaCamera() {
       [year: number]: GroupCategoriaDespesa;
     } = {};
 
-    data.sort((a, b) => a.value - b.value);
+    data.reverse();
+    // data.sort((a, b) => a.value - b.value);
 
     for (const d of data) {
       if (!groupData[d.year]) {
@@ -62,7 +63,7 @@ export function CategoriaDespesaCamera() {
     const svg = d3
       .select('#categoria-despesa')
       .append('svg')
-      .attr('width', '100%')
+      .attr('width', 800)
       .attr('height', height);
 
     const width = svg.node()?.getBoundingClientRect().width as number;
@@ -214,5 +215,5 @@ export function CategoriaDespesaCamera() {
       .attr('transform', `translate(${margin.left}, 0)`);
   }, []);
 
-  return <div id="categoria-despesa"></div>;
+  return <div id="categoria-despesa" style={{ width: '10' }}></div>;
 }
