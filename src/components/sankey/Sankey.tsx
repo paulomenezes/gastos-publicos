@@ -82,7 +82,7 @@ export function Sankey() {
     const svg = d3
       .select('#sankey')
       .append('svg')
-      .attr('width', '100%')
+      .attr('width', 2000)
       .attr('height', height);
 
     const lineGenerator = d3.line().curve(d3.curveMonotoneX);

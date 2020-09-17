@@ -62,7 +62,7 @@ export function CategoriaDespesaCamera() {
     const svg = d3
       .select('#categoria-despesa')
       .append('svg')
-      .attr('width', '100%')
+      .attr('width', 800)
       .attr('height', height);
 
     const width = svg.node()?.getBoundingClientRect().width as number;
@@ -214,5 +214,5 @@ export function CategoriaDespesaCamera() {
       .attr('transform', `translate(${margin.left}, 0)`);
   }, []);
 
-  return <div id="categoria-despesa"></div>;
+  return <div id="categoria-despesa" style={{ width: '10' }}></div>;
 }

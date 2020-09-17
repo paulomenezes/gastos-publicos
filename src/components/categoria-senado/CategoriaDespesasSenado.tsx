@@ -62,7 +62,7 @@ export function CategoriaDespesaSenado() {
     const svg = d3
       .select('#categoria-despesa-senado')
       .append('svg')
-      .attr('width', '100%')
+      .attr('width', 800)
       .attr('height', height);
 
     const width = svg.node()?.getBoundingClientRect().width as number;
