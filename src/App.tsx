@@ -1,7 +1,7 @@
 import React from 'react';
 import { CSVLink } from 'react-csv';
 import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
-import { Button, Grid, Paper } from '@material-ui/core';
+import { Button, Grid, Paper, Slider } from '@material-ui/core';
 import TabelaCamera from './components/tabela-camera/TabelaCamera';
 import TabelaSenado from './components/tabela-senado/TabelaSenado';
 import { CotaParlamentar } from './components/cota/CotaParlamentar';
@@ -13,6 +13,97 @@ import SenadoData from './components/categoria-senado/data.json';
 import { Sankey } from './components/sankey/Sankey';
 
 function App() {
+  const [bp, setBP] = React.useState<number>(35);
+  const [people, setPeople] = React.useState<number>(12);
+  const [inactive, setInactive] = React.useState<number>(10);
+  const [health, setHealth] = React.useState<number>(10);
+  const [bpc, setBpc] = React.useState<number>(8);
+  const [edu, setEdu] = React.useState<number>(8);
+
+  const handleChangeBP = (event: any, newValue: number | number[]) => {
+    let update = newValue as number;
+    let diff = bp - update;
+    let unit = diff / 6;
+
+    setBP(newValue as number);
+
+    setPeople(people + unit);
+    setInactive(inactive + unit);
+    setHealth(health + unit);
+    setBpc(bpc + unit);
+    setEdu(edu + unit);
+  };
+
+  const handleChangePeople = (event: any, newValue: number | number[]) => {
+    let update = newValue as number;
+    let diff = people - update;
+    let unit = diff / 6;
+
+    setPeople(newValue as number);
+
+    setBP(bp + unit);
+    setInactive(inactive + unit);
+    setHealth(health + unit);
+    setBpc(bpc + unit);
+    setEdu(edu + unit);
+  };
+
+  const handleChangeInactive = (event: any, newValue: number | number[]) => {
+    let update = newValue as number;
+    let diff = inactive - update;
+    let unit = diff / 6;
+
+    setInactive(newValue as number);
+
+    setBP(bp + unit);
+    setPeople(people + unit);
+    setHealth(health + unit);
+    setBpc(bpc + unit);
+    setEdu(edu + unit);
+  };
+
+  const handleChangeHealth = (event: any, newValue: number | number[]) => {
+    let update = newValue as number;
+    let diff = health - update;
+    let unit = diff / 6;
+
+    setHealth(newValue as number);
+
+    setBP(bp + unit);
+    setPeople(people + unit);
+    setInactive(inactive + unit);
+    setBpc(bpc + unit);
+    setEdu(edu + unit);
+  };
+
+  const handleChangeBpc = (event: any, newValue: number | number[]) => {
+    let update = newValue as number;
+    let diff = bpc - update;
+    let unit = diff / 6;
+
+    setBpc(newValue as number);
+
+    setBP(bp + unit);
+    setPeople(people + unit);
+    setInactive(inactive + unit);
+    setHealth(health + unit);
+    setEdu(edu + unit);
+  };
+
+  const handleChangeEdu = (event: any, newValue: number | number[]) => {
+    let update = newValue as number;
+    let diff = edu - update;
+    let unit = diff / 6;
+
+    setEdu(newValue as number);
+
+    setBP(bp + unit);
+    setPeople(people + unit);
+    setInactive(inactive + unit);
+    setHealth(health + unit);
+    setBpc(bpc + unit);
+  };
+
   return (
     <div style={{ padding: 30 }}>
       <Grid container spacing={3} direction="column">
@@ -85,6 +176,56 @@ function App() {
           <div style={{ display: 'flex', overflowX: 'auto', flexWrap: 'nowrap' }}>
             <div style={{ flex: 1 }}>
               <Sankey/>
+              <div style={{ paddingLeft: 25, width: 700 }}>
+                <Grid container spacing={3} direction="row">
+                  <Grid item xs={4}>
+                    <p>Benefícios previdenciários</p>
+                  </Grid>
+                  <Grid item xs={8}>
+                    <Slider value={bp} step={10} onChange={handleChangeBP} aria-labelledby="continuous-slider" />
+                  </Grid>
+                </Grid>
+                <Grid container spacing={3} direction="row">
+                  <Grid item xs={4}>
+                    <p>Pessoal</p>
+                  </Grid>
+                  <Grid item xs={8}>
+                    <Slider value={people} onChange={handleChangePeople} aria-labelledby="continuous-slider" />
+                  </Grid>
+                </Grid>
+                <Grid container spacing={3} direction="row">
+                  <Grid item xs={4}>
+                    <p>Inativos</p>
+                  </Grid>
+                  <Grid item xs={8}>
+                    <Slider value={inactive} onChange={handleChangeInactive} aria-labelledby="continuous-slider" />
+                  </Grid>
+                </Grid>
+                <Grid container spacing={3} direction="row">
+                  <Grid item xs={4}>
+                    <p>Saúde</p>
+                  </Grid>
+                  <Grid item xs={8}>
+                    <Slider value={health} onChange={handleChangeHealth} aria-labelledby="continuous-slider" />
+                  </Grid>
+                </Grid>
+                <Grid container spacing={3} direction="row">
+                  <Grid item xs={4}>
+                    <p>BPC</p>
+                  </Grid>
+                  <Grid item xs={8}>
+                    <Slider value={bpc} onChange={handleChangeBpc} aria-labelledby="continuous-slider" />
+                  </Grid>
+                </Grid>
+                <Grid container spacing={3} direction="row">
+                  <Grid item xs={4}>
+                    <p>Educação</p>
+                  </Grid>
+                  <Grid item xs={8}>
+                    <Slider value={edu} onChange={handleChangeEdu} aria-labelledby="continuous-slider" />
+                  </Grid>
+                </Grid>
+              </div>
             </div>
           </div>
         </Paper>
