@@ -31,7 +31,8 @@ export function CategoriaDespesaSenado() {
       [year: number]: GroupCategoriaDespesa;
     } = {};
 
-    data.sort((a, b) => a.value - b.value);
+    data.reverse();
+    // data.sort((a, b) => a.value - b.value);
 
     for (const d of data) {
       if (!groupData[d.year]) {

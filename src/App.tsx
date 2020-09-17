@@ -1,11 +1,16 @@
 import React from 'react';
-import { CotaParlamentar } from './components/cota/CotaParlamentar';
-import { CategoriaDespesaCamera } from './components/categoria-camera/CategoriaDespesasCamera';
-import { CategoriaDespesaSenado } from './components/categoria-senado/CategoriaDespesasSenado';
+import { CSVLink } from 'react-csv';
+import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
+import { Button, Grid, Paper } from '@material-ui/core';
 import TabelaCamera from './components/tabela-camera/TabelaCamera';
 import TabelaSenado from './components/tabela-senado/TabelaSenado';
+import { CotaParlamentar } from './components/cota/CotaParlamentar';
+import CotaData from './components/cota/data-merge.json';
+import { CategoriaDespesaCamera } from './components/categoria-camera/CategoriaDespesasCamera';
+import { CategoriaDespesaSenado } from './components/categoria-senado/CategoriaDespesasSenado';
+import CamaraData from './components/categoria-camera/data.json';
+import SenadoData from './components/categoria-senado/data.json';
 import { Sankey } from './components/sankey/Sankey';
-import { Grid, Paper } from '@material-ui/core';
 
 function App() {
   return (
@@ -49,14 +54,29 @@ function App() {
             </span>
           </p>
           <CotaParlamentar />
-          <div style={{ display: 'flex', overflowX: 'auto', flexWrap: 'nowrap' }}>
+          <CSVLink data={CotaData} filename='cota_parlamentar.csv'>
+            <Button variant='contained' size='small' startIcon={<CloudDownloadIcon />}>
+              CSV
+            </Button>
+          </CSVLink>
+          <div style={{ display: 'flex', overflowX: 'auto', flexWrap: 'nowrap', paddingTop: 15 }}>
             <div style={{ flex: 1 }}>
               <p>As despesas dos deputados são distribuídas nas seguintes categorias:</p>
               <CategoriaDespesaCamera />
+              <CSVLink data={CamaraData} filename='despesas_camara.csv'>
+                <Button variant='contained' size='small' startIcon={<CloudDownloadIcon />}>
+                  CSV
+                </Button>
+              </CSVLink>
             </div>
             <div style={{ flex: 1 }}>
               <p>Enquanto as dos senadores são distribuídas nessas outras categorias:</p>
               <CategoriaDespesaSenado />
+              <CSVLink data={SenadoData} filename='despesas_senado.csv'>
+                <Button variant='contained' size='small' startIcon={<CloudDownloadIcon />}>
+                  CSV
+                </Button>
+              </CSVLink>
             </div>
           </div>
         </Paper>

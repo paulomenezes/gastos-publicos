@@ -82,7 +82,7 @@ export function Sankey() {
     const svg = d3
       .select('#sankey')
       .append('svg')
-      .attr('width', 2000)
+      .attr('width', 1800)
       .attr('height', height);
 
     const lineGenerator = d3.line().curve(d3.curveMonotoneX);
@@ -305,7 +305,7 @@ export function Sankey() {
       }),
     ];
 
-    const group = svg.append('g').attr('transform', 'translate(0, 50)');
+    const group = svg.append('g').attr('transform', 'translate(-180, 50)');
 
     const extraPaths = [
       {
